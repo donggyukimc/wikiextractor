@@ -664,7 +664,8 @@ class Extractor(object):
         text = self.wiki2text(text)
         text = compact(self.clean(text))
         # from zwChan
-        text = [title_str] + text
+        # donggyukimc: disable title append to content
+        #text = [title_str] + text
 
         if sum(len(line) for line in text) < options.min_text_length:
             return
